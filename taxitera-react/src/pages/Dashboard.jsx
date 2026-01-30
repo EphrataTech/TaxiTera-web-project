@@ -14,6 +14,25 @@ const Dashboard = () => {
     const [loading, setLoading] = useState(false);
     const [activeTab, setActiveTab] = useState('book');
 
+    // Popular locations in Addis Ababa
+    const locations = [
+        { name: 'Bole International Airport', lat: 8.9806, lng: 38.7992 },
+        { name: 'Meskel Square', lat: 9.0084, lng: 38.7648 },
+        { name: 'Piazza', lat: 9.0348, lng: 38.7397 },
+        { name: 'Mercato', lat: 9.0084, lng: 38.7297 },
+        { name: 'Addis Ababa University', lat: 9.0348, lng: 38.7606 },
+        { name: 'Bole Medhanialem', lat: 8.9806, lng: 38.7992 },
+        { name: 'CMC (Comprehensive Medical Center)', lat: 9.0084, lng: 38.7648 },
+        { name: 'Kazanchis', lat: 9.0348, lng: 38.7397 },
+        { name: 'Mexico Square', lat: 9.0084, lng: 38.7297 },
+        { name: 'Sarbet', lat: 9.0348, lng: 38.7606 },
+        { name: 'Legehar (Railway Station)', lat: 8.9806, lng: 38.7992 },
+        { name: 'Stadium', lat: 9.0084, lng: 38.7648 },
+        { name: 'Arat Kilo', lat: 9.0348, lng: 38.7397 },
+        { name: 'Sidist Kilo', lat: 9.0084, lng: 38.7297 },
+        { name: 'Gotera', lat: 9.0348, lng: 38.7606 }
+    ];
+
     const vehicles = [
         { 
             id: 'minibus', 
@@ -71,14 +90,24 @@ const Dashboard = () => {
 
     const handleInputChange = (field, value) => {
         if (field === 'pickupAddress') {
+            const location = locations.find(loc => loc.name === value);
             setFormData(prev => ({
                 ...prev,
-                pickup: { ...prev.pickup, address: value, lat: 9.0192 + Math.random() * 0.1, lng: 38.7525 + Math.random() * 0.1 }
+                pickup: { 
+                    address: value, 
+                    lat: location ? location.lat : 9.0192 + Math.random() * 0.1, 
+                    lng: location ? location.lng : 38.7525 + Math.random() * 0.1 
+                }
             }));
         } else if (field === 'destinationAddress') {
+            const location = locations.find(loc => loc.name === value);
             setFormData(prev => ({
                 ...prev,
-                destination: { ...prev.destination, address: value, lat: 9.0192 + Math.random() * 0.1, lng: 38.7525 + Math.random() * 0.1 }
+                destination: { 
+                    address: value, 
+                    lat: location ? location.lat : 9.0192 + Math.random() * 0.1, 
+                    lng: location ? location.lng : 38.7525 + Math.random() * 0.1 
+                }
             }));
         } else {
             setFormData(prev => ({ ...prev, [field]: value }));
@@ -293,26 +322,46 @@ const Dashboard = () => {
 
                                 <div className="form-group">
                                     <label className="form-label">Pickup Location</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         className="form-input"
                                         required
-                                        placeholder="e.g. Bole Airport, Addis Ababa"
                                         value={formData.pickup.address}
                                         onChange={e => handleInputChange('pickupAddress', e.target.value)}
-                                    />
+                                        style={{ 
+                                            cursor: 'pointer',
+                                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        <option value="" style={{ backgroundColor: '#1f2937', color: 'white' }}>Select pickup location</option>
+                                        {locations.map(location => (
+                                            <option key={location.name} value={location.name} style={{ backgroundColor: '#1f2937', color: 'white' }}>
+                                                {location.name}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
 
                                 <div className="form-group">
                                     <label className="form-label">Destination</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         className="form-input"
                                         required
-                                        placeholder="e.g. Piassa, Addis Ababa"
                                         value={formData.destination.address}
                                         onChange={e => handleInputChange('destinationAddress', e.target.value)}
-                                    />
+                                        style={{ 
+                                            cursor: 'pointer',
+                                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        <option value="" style={{ backgroundColor: '#1f2937', color: 'white' }}>Select destination</option>
+                                        {locations.map(location => (
+                                            <option key={location.name} value={location.name} style={{ backgroundColor: '#1f2937', color: 'white' }}>
+                                                {location.name}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
 
                                 <div className="form-group">

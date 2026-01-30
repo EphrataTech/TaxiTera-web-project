@@ -36,18 +36,64 @@ const Navbar = () => {
                         </span>
                     </Link>
                     <nav className="desktop-nav">
-                        <Link to="/">Home</Link>
-                        <Link to="/about">About</Link>
-                        <Link to="/services">Services</Link>
+                        <Link 
+                            to="/" 
+                            style={{
+                                color: location.pathname === '/' ? '#FBBF24' : 'white',
+                                borderBottom: location.pathname === '/' ? '2px solid #FBBF24' : 'none',
+                                paddingBottom: '0.25rem'
+                            }}
+                        >
+                            Home
+                        </Link>
+                        <Link 
+                            to="/about"
+                            style={{
+                                color: location.pathname === '/about' ? '#FBBF24' : 'white',
+                                borderBottom: location.pathname === '/about' ? '2px solid #FBBF24' : 'none',
+                                paddingBottom: '0.25rem'
+                            }}
+                        >
+                            About
+                        </Link>
+                        <Link 
+                            to="/services"
+                            style={{
+                                color: location.pathname === '/services' ? '#FBBF24' : 'white',
+                                borderBottom: location.pathname === '/services' ? '2px solid #FBBF24' : 'none',
+                                paddingBottom: '0.25rem'
+                            }}
+                        >
+                            Services
+                        </Link>
                         {user ? (
                             <>
-                                {!isOnDashboard && <Link to="/dashboard">Dashboard</Link>}
-                                <span style={{ color: 'var(--amber-400)', fontSize: '0.9rem' }}>Hi, {user.fullName}</span>
+                                {!isOnDashboard && (
+                                    <Link 
+                                        to="/dashboard"
+                                        style={{
+                                            color: location.pathname === '/dashboard' ? '#FBBF24' : 'white',
+                                            borderBottom: location.pathname === '/dashboard' ? '2px solid #FBBF24' : 'none',
+                                            paddingBottom: '0.25rem'
+                                        }}
+                                    >
+                                        Dashboard
+                                    </Link>
+                                )}
                                 <button onClick={handleLogout} className="btn-primary">Logout</button>
                             </>
                         ) : (
                             <>
-                                <Link to="/login">Sign In</Link>
+                                <Link 
+                                    to="/login"
+                                    style={{
+                                        color: location.pathname === '/login' ? '#FBBF24' : 'white',
+                                        borderBottom: location.pathname === '/login' ? '2px solid #FBBF24' : 'none',
+                                        paddingBottom: '0.25rem'
+                                    }}
+                                >
+                                    Sign In
+                                </Link>
                                 <Link to="/register" className="btn-primary">Get Started</Link>
                             </>
                         )}
@@ -87,19 +133,70 @@ const Navbar = () => {
                         </button>
                     </div>
                     <nav className="mobile-menu-nav">
-                        <Link to="/" onClick={toggleMobileMenu}>🏠 Home</Link>
-                        <Link to="/about" onClick={toggleMobileMenu}>ℹ️ About</Link>
-                        <Link to="/services" onClick={toggleMobileMenu}>🚗 Services</Link>
+                        <Link 
+                            to="/" 
+                            onClick={toggleMobileMenu}
+                            style={{
+                                background: location.pathname === '/' ? 'rgba(251, 191, 36, 0.2)' : 'transparent',
+                                borderLeft: location.pathname === '/' ? '3px solid #FBBF24' : 'none',
+                                color: location.pathname === '/' ? '#FBBF24' : 'white'
+                            }}
+                        >
+                            Home
+                        </Link>
+                        <Link 
+                            to="/about" 
+                            onClick={toggleMobileMenu}
+                            style={{
+                                background: location.pathname === '/about' ? 'rgba(251, 191, 36, 0.2)' : 'transparent',
+                                borderLeft: location.pathname === '/about' ? '3px solid #FBBF24' : 'none',
+                                color: location.pathname === '/about' ? '#FBBF24' : 'white'
+                            }}
+                        >
+                            About
+                        </Link>
+                        <Link 
+                            to="/services" 
+                            onClick={toggleMobileMenu}
+                            style={{
+                                background: location.pathname === '/services' ? 'rgba(251, 191, 36, 0.2)' : 'transparent',
+                                borderLeft: location.pathname === '/services' ? '3px solid #FBBF24' : 'none',
+                                color: location.pathname === '/services' ? '#FBBF24' : 'white'
+                            }}
+                        >
+                            Services
+                        </Link>
                         {user ? (
                             <>
-                                {!isOnDashboard && <Link to="/dashboard" onClick={toggleMobileMenu}>📊 Dashboard</Link>}
-                                <div style={{ padding: '0.75rem 1rem', color: 'var(--amber-400)', fontSize: '0.9rem' }}>Hi, {user.fullName}</div>
-                                <button onClick={handleLogout} style={{ background: 'linear-gradient(to right, #FBBF24, #F97316)', color: 'black', fontWeight: 700, border: 'none', padding: '0.75rem 1rem', borderRadius: '0.5rem', width: '100%', textAlign: 'left' }}>🚪 Logout</button>
+                                {!isOnDashboard && (
+                                    <Link 
+                                        to="/dashboard" 
+                                        onClick={toggleMobileMenu}
+                                        style={{
+                                            background: location.pathname === '/dashboard' ? 'rgba(251, 191, 36, 0.2)' : 'transparent',
+                                            borderLeft: location.pathname === '/dashboard' ? '3px solid #FBBF24' : 'none',
+                                            color: location.pathname === '/dashboard' ? '#FBBF24' : 'white'
+                                        }}
+                                    >
+                                        Dashboard
+                                    </Link>
+                                )}
+                                <button onClick={handleLogout} style={{ background: 'linear-gradient(to right, #FBBF24, #F97316)', color: 'black', fontWeight: 700, border: 'none', padding: '0.75rem 1rem', borderRadius: '0.5rem', width: '100%', textAlign: 'left' }}>Logout</button>
                             </>
                         ) : (
                             <>
-                                <Link to="/login" onClick={toggleMobileMenu}>🔑 Sign In</Link>
-                                <Link to="/register" style={{ background: 'linear-gradient(to right, #FBBF24, #F97316)', color: 'black', fontWeight: 700 }} onClick={toggleMobileMenu}>🚀 Get Started</Link>
+                                <Link 
+                                    to="/login" 
+                                    onClick={toggleMobileMenu}
+                                    style={{
+                                        background: location.pathname === '/login' ? 'rgba(251, 191, 36, 0.2)' : 'transparent',
+                                        borderLeft: location.pathname === '/login' ? '3px solid #FBBF24' : 'none',
+                                        color: location.pathname === '/login' ? '#FBBF24' : 'white'
+                                    }}
+                                >
+                                    Sign In
+                                </Link>
+                                <Link to="/register" style={{ background: 'linear-gradient(to right, #FBBF24, #F97316)', color: 'black', fontWeight: 700 }} onClick={toggleMobileMenu}>Get Started</Link>
                             </>
                         )}
                     </nav>

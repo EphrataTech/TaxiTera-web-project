@@ -78,45 +78,41 @@ const Services = () => {
                     {/* Additional Services */}
                     <div className="page-card" style={{ marginBottom: '4rem' }}>
                         <h2 className="page-card-title">Additional Services</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📅</div>
-                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.25rem' }}>Advance Booking</h3>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Schedule your rides up to 7 days in advance. Perfect for airport transfers, important meetings, or planned events.</p>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+                            <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.1rem' }}>Advance Booking</h3>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5' }}>Schedule your rides up to 7 days in advance. Perfect for airport transfers, important meetings, or planned events with guaranteed availability.</p>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏢</div>
-                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.25rem' }}>Corporate Packages</h3>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Special rates for businesses and organizations. Bulk booking discounts and dedicated account management available.</p>
+                            <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.1rem' }}>Corporate Packages</h3>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5' }}>Special rates for businesses and organizations. Bulk booking discounts, dedicated account management, and priority support available.</p>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
-                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.25rem' }}>Custom Routes</h3>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Need a specific route not in our system? Contact us for custom routing and special destination requests.</p>
+                            <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.1rem' }}>Custom Routes</h3>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5' }}>Need a specific route not in our system? Contact us for custom routing, special destination requests, and personalized travel solutions.</p>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎧</div>
-                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.25rem' }}>Premium Support</h3>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>24/7 customer support with priority assistance for urgent travel needs and emergency situations.</p>
+                            <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                                <h3 style={{ color: 'white', fontWeight: 600, marginBottom: '0.75rem', fontSize: '1.1rem' }}>Premium Support</h3>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5' }}>24/7 customer support with priority assistance for urgent travel needs, emergency situations, and real-time trip monitoring.</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Pricing Info */}
-                    <div style={{ background: 'linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(251, 191, 36, 0.2))', border: '1px solid rgba(251, 191, 36, 0.3)', borderRadius: '1.5rem', padding: '2rem', marginBottom: '4rem' }}>
+                    <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', padding: '2rem', marginBottom: '4rem' }}>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', textAlign: 'center', marginBottom: '1.5rem' }}>Transparent Pricing</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', textAlign: 'center' }}>
-                            <div>
-                                <div style={{ color: '#FBBF24', fontWeight: 700, marginBottom: '0.5rem' }}>✓ No Hidden Fees</div>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem' }}>What you see is what you pay</p>
+                            <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                                <div style={{ color: 'white', fontWeight: 600, marginBottom: '0.5rem' }}>No Hidden Fees</div>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>What you see is what you pay - transparent pricing always</p>
                             </div>
-                            <div>
-                                <div style={{ color: '#FBBF24', fontWeight: 700, marginBottom: '0.5rem' }}>✓ No Surge Pricing</div>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem' }}>Same fair rates all day long</p>
+                            <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                                <div style={{ color: 'white', fontWeight: 600, marginBottom: '0.5rem' }}>No Surge Pricing</div>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Same fair rates throughout the day and night</p>
                             </div>
-                            <div>
-                                <div style={{ color: '#FBBF24', fontWeight: 700, marginBottom: '0.5rem' }}>✓ Group Discounts</div>
-                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem' }}>Better rates for larger vehicles</p>
+                            <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                                <div style={{ color: 'white', fontWeight: 600, marginBottom: '0.5rem' }}>Group Discounts</div>
+                                <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Better per-person rates for larger vehicle bookings</p>
                             </div>
                         </div>
                     </div>
