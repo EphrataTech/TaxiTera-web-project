@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { user, logout } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    // Check if user is on dashboard page
+    const isOnDashboard = location.pathname === '/dashboard';
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,7 +41,7 @@ const Navbar = () => {
                         <Link to="/services">Services</Link>
                         {user ? (
                             <>
-                                <Link to="/dashboard">Dashboard</Link>
+                                {!isOnDashboard && <Link to="/dashboard">Dashboard</Link>}
                                 <span style={{ color: 'var(--amber-400)', fontSize: '0.9rem' }}>Hi, {user.fullName}</span>
                                 <button onClick={handleLogout} className="btn-primary">Logout</button>
                             </>
@@ -88,7 +92,7 @@ const Navbar = () => {
                         <Link to="/services" onClick={toggleMobileMenu}>🚗 Services</Link>
                         {user ? (
                             <>
-                                <Link to="/dashboard" onClick={toggleMobileMenu}>📊 Dashboard</Link>
+                                {!isOnDashboard && <Link to="/dashboard" onClick={toggleMobileMenu}>📊 Dashboard</Link>}
                                 <div style={{ padding: '0.75rem 1rem', color: 'var(--amber-400)', fontSize: '0.9rem' }}>Hi, {user.fullName}</div>
                                 <button onClick={handleLogout} style={{ background: 'linear-gradient(to right, #FBBF24, #F97316)', color: 'black', fontWeight: 700, border: 'none', padding: '0.75rem 1rem', borderRadius: '0.5rem', width: '100%', textAlign: 'left' }}>🚪 Logout</button>
                             </>
