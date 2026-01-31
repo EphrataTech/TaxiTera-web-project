@@ -4,7 +4,7 @@ const User = require('../models/user');
 const { registerSchema, loginSchema } = require('../middleware/validation');
 const { sendResponse } = require('../utils/helpers');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_here';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const register = async (req, res, body) => {
     const { error, value } = registerSchema.validate(body);
